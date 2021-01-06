@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 // Estrutura do tipo: No, com valor: número e prox como mecanismo para unir os Nos / cartas. 
 typedef struct no{
     int numero;  
@@ -15,12 +14,10 @@ typedef struct no{
 } No; 
 // Obs: cada Nó em minha lista, representa de forma abstrata uma carta.
 
-
 No* inicio = NULL;
 No* fim    = NULL;
 int tamanho = 0;
-
-
+    
 // Procedimento: responsável por criar uma lista com 'n' cartas, [1 - n] cartas no total 
 // Ex1. se n = 7, teremos 1, 2, 3, 4, 5, 6, 7
 // Ex2. se n = 5, teremos 1, 2, 3, 4, 5
@@ -44,7 +41,6 @@ void criando_lista (int n)
     }
 }
 
-
 // Procedimento: Responsável por fazer a seguinte parte da questão: "Jogue fora a carta do topo e mova a próxima carta (a carta que 
 // ficou no topo) para a base", encontrando a sequência de cartas descartadas e a última carta remanescente.
 void operacao ()
@@ -61,13 +57,13 @@ void operacao ()
             if (tamanho > 2) printf(", "); // somente para imprimir a vírgula da forma correta
         }
         else {            // i é impar
-		    lixo = aux;
-		    aux = aux -> prox;
-		    inicio = aux -> prox;
-		    free(lixo);
-		    fim -> prox = aux;
-		    aux -> prox = NULL;
-		    fim = aux;
+            lixo = aux;
+            aux = aux -> prox;
+            inicio = aux -> prox;
+            free(lixo);
+            fim -> prox = aux;
+            aux -> prox = NULL;
+            fim = aux;
         tamanho--;
         }        
         aux = inicio;
